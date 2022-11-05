@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background-size: 1275px 700px; 
+    position:fixed;
+}
+.sidebar
+{   height: 100%;
+    width: 17.5rem;
+    background-color: #24305E;
+    color: #A8D0E6;
+   
+}
+li a{
+    text-decoration: none;
+    color:#A8D0E6;
+    font-weight: bolder;
+}
+.sidebar nav{
+    padding: 30px;
+    
+}
+.sidebar nav li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 26px;
+    padding-top: 50px;
+    cursor: pointer;
+}
+.sidebar nav li:hover{
+    
+    font-size: 165%;
+}
+
+ .site .sidebar .fa
+  {  margin-right: 5%;
+    height: 5%;
+    color:#A8D0E6;
+  }
+  .site .sidebar .fas
+  {  margin-right: 5%;
+    height: 5%;
+    color:#A8D0E6;
+  }
+.site
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.header2{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    background-color: #F76C6C;
+}
+.header2 .container{
+    width: 900px;
+    height: 300px;
+    margin-bottom:30%;
+    margin-left: 9%;
+}
+.header2 .box{
+  position: relative;
+   width:250px;
+   margin: 15px;
+   height: 261px;
+   display: flex;
+   float: left;
+   box-sizing: border-box;
+   overflow: hidden;
+   border-radius: 10px;
+    background-color: #F8E9A1;
+}
+.header2 .box .icons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(#A8D0E6,WHITE,#A8D0E6);
+    transition: 0.5s;
+    z-index: 1;
+}
+.header2 .box:hover .icons{
+    top: 20px;
+    left: calc(50%-40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+.header2 .box .icons .fa{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 70px;
+    transition: 0.5s;
+    color:#24305E;
+    transform: translate(-50%,-50%);
+}.header2 .box:hover .icons .fa{
+    font-size: 50px;
+}
+.header2 .box .icons .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 70px;
+    transition: 0.5s;
+    color:#24305E;
+    transform: translate(-50%,-50%);
+}.header2 .box:hover .icons .fas{
+    font-size: 50px;
+}
+.header2 .box h3{
+    color: #24305E;
+    text-decoration: underline;
+    margin-left: 45%;
+    font-size: x-large;
+ font-weight: bold;
+    justify-content: center;
+}
+.header2 .box p{
+    margin-top: 20%;
+    margin-left: 5%;
+ font-weight: bold;
+    color: #24305E;
+}

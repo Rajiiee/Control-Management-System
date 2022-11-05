@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/profile_edit.css">
+    <script src="https://kit.fontawesome.com/bea69f3d2e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="site">
+        <div class="sidebar">
+         <nav>
+             <ul>
+                <div class="closeMenu"><i class="fa fa-times"></i></div>
+                <li><a href="index.html"><i class="fa fa-home"></i>HOME</a></li>
+                <li><a href="overview.html"><i class="fa fa-address-card"></i>OVERVIEW</a></li>
+                <li><a href="post.html"><i class="fa fa-user"></i>POSTS</a></li>
+                <li><a href="profile.html"><i class="fa fa-briefcase"></i>PROFILE</a></li>
+                <li><a href="viral.html"><i class="fa-solid fa-bolt"></i>VIRAL POSTS</a></li>
+                <li><a href ="contact.html"><i class="fa fa-comments"></i>
+                    CONTACT</a></li>
+             </ul>
+         </nav>
+     </div>
+    <div class="main">
+        <form >
+        <div>
+            <h1 class="head">EDIT</h1>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" pattern="[A-Za-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </div>
+        <br>
+        <div>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="phonenumber" required>
+        </div>
+        <br>
+        <div>
+            <textarea name="aboutme" id="about" cols="60" rows="10" placeholder="About Me" required></textarea>
+        </div>
+        <br>
+            <button class="submit" onclick="next();">SAVE</button>
+            <br>
+            <br>
+        </form>
+    </div>
+    <script src="./profile.js"></script>
+</body>
+</html>

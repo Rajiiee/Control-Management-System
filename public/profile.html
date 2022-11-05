@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="https://kit.fontawesome.com/bea69f3d2e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="site">
+        <div class="sidebar">
+         <nav>
+             <ul>
+                <div class="closeMenu"><i class="fa fa-times"></i></div>
+                    <li><a href="index.html"><i class="fa fa-home"></i>HOME</a></li>
+                    <li><a href="overview.html"><i class="fa fa-address-card"></i>OVERVIEW</a></li>
+                    <li><a href="post.html"><i class="fa fa-user"></i>POSTS</a></li>
+                    <li><a href="profile.html"><i class="fa fa-briefcase"></i>PROFILE</a></li>
+                    <li><a href="viral.html"><i class="fa fa-briefcase"></i>VIRAL POSTS</a></li>
+                    <li><a href ="contact.html"><i class="fa fa-comments"></i>CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main">
+            <hr>
+            <h1>PROFILE</h1>
+            <hr>
+            <table>
+                <tr>
+                    <td>
+                        <img id="uploadPreview" class="image" /><br>
+                        <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+                    </td>
+                    <td>
+                        <div class="info">
+                            <br><span class="name" class="pro"> > Name</span><br>
+                            <span class="email" class="pro"> > Email</span><br>
+                            <span class="phonenumber" class="pro"> > Phone-number</span><br><br></div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            
+            <br>
+                <h1 class="h1">About Me : </h1>
+                <br>
+            
+                <div class="p">
+                    
+                </div>
+                <button class="bot"><a href="./profile_edit.html">Edit Profile</a></button>
+                <button class="bot"><a href="./profile_delete.html">Delete Profile</a></button>
+                
+        </div>
+
+            <script type="text/javascript">
+                function PreviewImage() {
+                    var oFReader = new FileReader();
+                    oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+                    oFReader.onload = function (oFREvent) {
+                        document.getElementById("uploadPreview").src = oFREvent.target.result;
+                    };
+                };
+
+            </script>
+        <script src="./profile.js"></script>
+</body>
+</html>

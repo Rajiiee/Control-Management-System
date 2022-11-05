@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/bea69f3d2e.js" crossorigin="anonymous"></script>
+    <title>login</title>
+</head>
+<body>
+    <div id="heading"><p>Welcome back...</p></div>
+        <div class="container">
+            <div class="row">
+                <div class="coln">
+                <div class="contact-left">
+                    <h1 class="Sub-title">Content Management System <br><br></h1>
+                    <div class="social-icon">
+                        <div class="im"><img  src="./img/login.png" width="256" height="256"></div>
+                        <a href=""><i class="fa-brands fa-telegram"></i></a>
+                        <a href=""><i class="fa-brands fa-discord"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href=""class="btn btn2"></a>
+                </div>
+            </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" action="/login" method="post">
+                        <input name="name" type="text" placeholder="Your name" required>
+                        <input name="email" type="email" placeholder="Your email"required>
+                        <input name="password"  type="password" placeholder="Your Password">
+                        <button type="Submit"class="btn btn2">Sign In</button>
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>copyright@book town made by RRS</p>
+        </div>
+    </div>
+    <script>
+        var tablinks= document.getElementsByClassName(tab-links);
+        var tabcontent= document.getElementsByClassName(tab-content);
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tablinks){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.cuurentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+    </script>
+    </body>
+    </html>
+</body>
+</html>
