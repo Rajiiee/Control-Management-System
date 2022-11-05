@@ -77,18 +77,17 @@ app.post("/login",async (req,res) => {
 
 //gets profile page
 app.get("/profile",function(req,res){
-  console.log(__dirname);
   res.sendFile("C:/Users/rajig/OneDrive/Desktop/cms/public/profile.html");
-    // res.sendFile("/C:/Users/rajig/OneDrive/Desktop/cms/public/html/profile.html");
-
 });
 
 //deletes profile
-app.post("/profile", async(req,res)=>{
+app.post("/delprofile", async(req,res)=>{
   try{
     const delete_email = req.body.email;
     const delete_pass = req.body.password;
     const foundUser = await User.find({email:delete_email});
+    var result = "";
+    console.log(req.body.password);
     if(foundUser.length === 0){
       console.log("Wrong email");
     }else{
@@ -107,12 +106,30 @@ app.post("/profile", async(req,res)=>{
     console.log(e);
     res.send("Profile could not be deleted");
   }
-  
+});
 
-})
-// app.put("/profile",function(req,res){
-//   console.log(req.body);
-// });
+//update user
+app.post("/edit_profile", async(req,res) => {
+  try{
+    const email = req.body.email;
+  const name = req.body.name;
+  const p_no = parseInt(req.body.contact);
+  const about = req.body.about_me;
+  const p_Update = await User.updateOne(
+    { email : email},
+    { username : name , phone_number : p_no , about_me : about }
+  );
+  console.log(p_Update);
+  console.log("User profile updated");
+  res.redirect("/profile");
+}
+  catch(e){
+    console.log(e);
+    res.redirect("/edit_profile");
+  }
+
+});
+
 
 
 app.listen(port, () => {

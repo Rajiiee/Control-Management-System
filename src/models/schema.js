@@ -13,7 +13,16 @@ const formModel = mongoose.Schema({
     "password":{
         type:String,
         required: true,
+    },
+    "phone_number":{
+        type : Number,
+        min: 10,
+        unique: true,
+    },
+    "about_me":{
+        type: String,
     }
+
 });
 
 var User = new mongoose.model('forms',formModel);

@@ -65,9 +65,12 @@ span{
 .image{
     border-radius: 50%;
     border-color: black;
-    border-width: 5px;
     width: 200px;
     height: 200px;
+}
+img{
+    background-image: url("./default image.jpg");
+    background-size: 200px;
 }
 table{
     border-width: 12em;

@@ -25,25 +25,25 @@
          </nav>
      </div>
     <div class="main">
-        <form >
+        <form action="/edit_profile" method="post">
         <div>
             <h1 class="head">EDIT</h1>
         </div>
         <br>
         <div class="form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Type your registered email" required>
         </div>
-        <br>
+        <br>            
         <div class="form-group">
-            <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" pattern="[A-Za-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Username" required>
         </div>
         <br>
         <div>
-            <input type="tel" id="contact" name="contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="phonenumber" required>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="phonenumber" required>
         </div>
         <br>
         <div>
-            <textarea name="aboutme" id="about" cols="60" rows="10" placeholder="About Me" required></textarea>
+            <textarea name="about_me" id="about" cols="60" rows="10" placeholder="About Me" required></textarea>
         </div>
         <br>
             <button class="submit" onclick="next();">SAVE</button>
