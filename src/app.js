@@ -2,6 +2,8 @@ const express = require("express");
 const User= require("./models/schema.js");
 const bodyParser = require("body-parser");
 const app = express();
+let alert = require('alert');
+
 require("dotenv").config();
 require("./db/conn");
 
@@ -18,7 +20,7 @@ app.get("/signup",(req,res) =>{
 //CREATE NEW USER
 app.post("/signup",(req,res) =>{
     console.log(req.body);
-    
+
     //used to store form data in variables
     const uname = req.body.name;
     const email = req.body.email;
@@ -32,6 +34,7 @@ app.post("/signup",(req,res) =>{
 
     user.save()
     .then(function () {
+      alert("New User Created");
         res.redirect("/login"); //sending over to login page
       })
       .catch(function (err) {
@@ -53,10 +56,12 @@ app.post("/login",async (req,res) => {
     const login_email=req.body.email;
     const login_pass=req.body.password;
     console.log(login_email);
+
     const foundUser = await User.find({email:login_email});
     console.log(foundUser)
     if (foundUser.length == 0){
       console.log("Not found");
+      alert("Email does not exist");
       result = "/login";
 
     }else{
@@ -65,6 +70,7 @@ app.post("/login",async (req,res) => {
       result="/profile";
       } else {
         console.log("Password inncorrect");
+        alert("Password Incorrect");
         result = "/login";
       }
 
@@ -86,19 +92,24 @@ app.post("/delprofile", async(req,res)=>{
     const delete_email = req.body.email;
     const delete_pass = req.body.password;
     const foundUser = await User.find({email:delete_email});
+
     var result = "";
     console.log(req.body.password);
     if(foundUser.length === 0){
       console.log("Wrong email");
+      alert("Email does not exist");
+      
     }else{
       if(delete_pass === foundUser[0].password){
       const delUser = await User.deleteOne({email :delete_email});
       delUser
       console.log("user deleted");
+      alert("Profile Created")
       result="/login";
       }
       else{
           result="/profile";
+          alert("Email and Password does not match")
       }
     }
     res.redirect(result)
@@ -121,6 +132,7 @@ app.post("/edit_profile", async(req,res) => {
   );
   console.log(p_Update);
   console.log("User profile updated");
+  alert("Profile Editted")
   res.redirect("/profile");
 }
   catch(e){
